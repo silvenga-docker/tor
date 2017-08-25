@@ -5,6 +5,7 @@ services:
     ports:
       - 443:443
       - 80:80
+      - 127.0.0.1:9051:9051
     environment:
       TOR_ORPORT: 443
       TOR_DIRPORT: 80
