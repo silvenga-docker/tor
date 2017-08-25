@@ -1,0 +1,15 @@
+version: "3"
+services:
+  tor:
+    build: .
+    ports:
+      - 443:443
+      - 80:80
+    environment:
+      TOR_ORPORT: 443
+      TOR_DIRPORT: 80
+      TOR_NICKNAME: testname
+      TOR_CONTACT: testcontact
+    volumes:
+      - ./data:/var/lib/tor
+    restart: unless-stopped
