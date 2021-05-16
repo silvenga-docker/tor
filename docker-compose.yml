@@ -1,4 +1,4 @@
-version: "3"
+version: "2.1"
 services:
   tor:
     build: .
@@ -6,11 +6,5 @@ services:
       - 443:443
       - 80:80
       - 127.0.0.1:9051:9051
-    environment:
-      TOR_ORPORT: 443
-      TOR_DIRPORT: 80
-      TOR_NICKNAME: testname
-      TOR_CONTACT: testcontact
     volumes:
       - ./data:/var/lib/tor
-    restart: unless-stopped
