@@ -13,6 +13,8 @@ RUN set -xe \
     && apt-get purge wget -y apt-transport-https gnupg2 \
     && apt-get autoremove -y --purge \
     && apt-get clean && rm -rf /var/lib/apt/lists/* \
+    && groupadd tor --gid 1000 \
+    && adduser tor --uid 1000 --gid 1000 \
     && tor --version
 
 CMD [ "tor" ]
