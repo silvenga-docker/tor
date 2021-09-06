@@ -14,7 +14,7 @@ RUN set -xe \
     && apt-get autoremove -y --purge \
     && apt-get clean && rm -rf /var/lib/apt/lists/* \
     && groupadd tor --gid 1000 \
-    && adduser tor --uid 1000 --gid 1000 \
+    && adduser tor --uid 1000 --gid 1000 --disabled-password --gecos "" \
     && tor --version
 
 CMD [ "tor" ]
