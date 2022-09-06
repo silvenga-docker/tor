@@ -18,7 +18,7 @@ RUN set -xe \
     > /etc/apt/sources.list.d/tor.list \
     # Install tor.
     && apt-get update \
-    && apt-get install -y tor obfs4proxy \
+    && apt-get install -y --no-install-recommends tor tor-geoipdb obfs4proxy \
     && groupadd tor --gid 1000 \
     && adduser tor --uid 1000 --gid 1000 --disabled-password --gecos "" \
     # Cleanup.
