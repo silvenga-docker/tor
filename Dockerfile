@@ -1,7 +1,6 @@
 FROM debian:bullseye
 
 LABEL maintainer "Mark Lopez <m@silvenga.com>"
-LABEL org.opencontainers.image.source https://github.com/silvenga-docker/tor
 
 RUN set -xe \
     # Upgrade.
