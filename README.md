@@ -1,6 +1,6 @@
 # tor
 
-Yet another tor image.
+Yet another Tor image.
 
 This image is published weekly by Github Actions, this ensures tor and other package upgrades are integrated in a timely manner.
 
