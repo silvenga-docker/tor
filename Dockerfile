@@ -1,4 +1,4 @@
-FROM debian:bookworm
+FROM debian:trixie-slim
 
 LABEL org.opencontainers.image.authors="Mark Lopez <m@silvenga.com>"
 
@@ -13,7 +13,7 @@ RUN set -xe \
     && gpg -q --import --import-options import-show --with-colons /opt/torproject.gpg \
     | awk -F: '$1 == "fpr" { print $10 }' \
     | grep A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 \
-    && echo "deb [arch=amd64, signed-by=/opt/torproject.gpg] https://deb.torproject.org/torproject.org bookworm main" \
+    && echo "deb [arch=amd64, signed-by=/opt/torproject.gpg] https://deb.torproject.org/torproject.org trixie main" \
     > /etc/apt/sources.list.d/tor.list \
     # Install tor.
     && apt-get update \
